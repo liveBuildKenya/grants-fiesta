@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "a6790354-f43e-4976-8ff9-5fccaf2465e1",
+		"name": "GMS_Permissions&Menu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getUserModulePermissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI5YTQwNGQ1YzQwYjFlYTg2MGQzZDYiLCJuYW1lIjoiVGVzdCBVc2VyIiwiaWF0IjoxNTkzMzYyODIwLCJleHAiOjE1OTM0NDkyMjB9.pW-7jxPyMwhIKTwy573GAvJOqJ4NAKBheiOUDqALvbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/getUserModulePermissions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"getUserModulePermissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setUserModulePermissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI5YTQwNGQ1YzQwYjFlYTg2MGQzZDYiLCJuYW1lIjoiVGVzdCBVc2VyIiwiaWF0IjoxNTkzMzYyODIwLCJleHAiOjE1OTM0NDkyMjB9.pW-7jxPyMwhIKTwy573GAvJOqJ4NAKBheiOUDqALvbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/setUserModulePermissions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"setUserModulePermissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setDefaultGroups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI5YTQwNGQ1YzQwYjFlYTg2MGQzZDYiLCJuYW1lIjoiVGVzdCBVc2VyIiwiaWF0IjoxNTkzMzYyODIwLCJleHAiOjE1OTM0NDkyMjB9.pW-7jxPyMwhIKTwy573GAvJOqJ4NAKBheiOUDqALvbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/setDefaultGroups",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"setDefaultGroups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/groups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/userGroup/getAllGroups",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"userGroup",
+						"getAllGroups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjAyYjYyMDc4ZDA3NjRlOGMxYTFjODAiLCJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1OTQwNDU5MjgsImV4cCI6MTU5NDEzMjMyOH0.wqHJ6SkvA1ABK6mtb4MOMyAP9PwKJHCayeuCn79FHsY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n   {\r\n      \"title\": true,\r\n      \"name\": \"Applications\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"name\": \"Home\",\r\n      \"url\": \"/dashboard\",\r\n      \"icon\": \"icon-home\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"name\": \"Grants List\",\r\n      \"url\": \"/requestForApplications/public\",\r\n      \"icon\": \"icon-list\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"name\": \"My Applications\",\r\n      \"url\": \"/applications\",\r\n      \"icon\": \"icon-note\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"title\": true,\r\n      \"name\": \"My Account\",\r\n      \"isAllowAllAuthenticatedUsers\": true,\r\n      \"order\": 1\r\n   },\r\n   {\r\n      \"name\": \"My Profile\",\r\n      \"url\": \"/profile\",\r\n      \"icon\": \"icon-user\",\r\n      \"isAllowAllAuthenticatedUsers\": true,\r\n      \"order\": 1\r\n   },\r\n   {\r\n      \"title\": true,\r\n      \"name\": \"Administrator\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 10\r\n   },\r\n   {\r\n      \"name\": \"Users Management\",\r\n      \"url\": \"/manageUsers\",\r\n      \"icon\": \"icon-people\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 12\r\n   },\r\n   {\r\n      \"name\": \"Manage RFAs\",\r\n      \"url\": \"/admin\",\r\n      \"icon\": \"icon-book-open\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 11,\r\n      \"children\": [\r\n         {\r\n            \"name\": \"Call for Applications\",\r\n            \"url\": \"/rfa-list\",\r\n            \"icon\": \"icon-notebook\"\r\n         },\r\n         {\r\n            \"name\": \"Template List\",\r\n            \"url\": \"/applications/template\",\r\n            \"icon\": \"icon-puzzle\"\r\n         }\r\n      ]\r\n   }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/menu",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu-AddUserToGroup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"itemID\": \"5f0413b26663ec039cd625d9\",\r\n    \"userGroupID\": \"5f03868f75f56906f838b0aa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/menu/menuItemUserGroup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menu",
+						"menuItemUserGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu-AdminGetAllMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/menu/adminGetAllMenu",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menu",
+						"adminGetAllMenu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateGlobalAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI5YTQwNGQ1YzQwYjFlYTg2MGQzZDYiLCJuYW1lIjoiVGVzdCBVc2VyIiwiaWF0IjoxNTkzMzYyODIwLCJleHAiOjE1OTM0NDkyMjB9.pW-7jxPyMwhIKTwy573GAvJOqJ4NAKBheiOUDqALvbI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/createGlobalAdministrator/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"createGlobalAdministrator",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsGlobalAdmin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTM0MzQ3OTEsImV4cCI6MTU5MzUyMTE5MX0.iCH15zuuPtXmA3zmjgeT-q_BDnsX4qkgi--53EtUR3I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/isGlobalAdministrator/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"isGlobalAdministrator",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user - GlobalAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"gms_admin@sibasi.com\",\n\t\"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWZhYjQ5NjA0OGRjM2QyZGI5ZjhiNTIiLCJuYW1lIjoiQW1vcyBXYWNoYW5nYSIsImlhdCI6MTU5NDI2NTE1OCwiZXhwIjoxNTk0MzUxNTU4fQ.a9l0QpDmJD3Djp8h1epQ-UWrJ3ZguACtg5G-_DNq0bc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "579cc2ab-f3e6-4374-bae7-7e52e745e24c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0e1407c7-c4e4-45b5-bb1b-808e3234f62b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

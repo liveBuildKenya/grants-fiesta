@@ -1,0 +1,378 @@
+{
+	"info": {
+		"_postman_id": "a8eff5c2-d559-4710-8b2c-2f0e437e45c3",
+		"name": "GrantsManagement_Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticated",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "702d1ab3-189c-48ae-af09-79fcaf761980",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fcb5a49e-9770-4874-87e4-e4c3562eb48a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Fund",
+					"item": [
+						{
+							"name": "Apply Fund",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Fund my project\",\n\t\"type\": \"INNOVATIONFUND\",\n\t\"stage\": \"DRAFT\",\n\t\"organizations\": \"Sibasi Ltd, Workspace Ltd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/fund/apply",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"fund",
+										"apply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "File upload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/AmosWachanga/Desktop/base64_sample.txt"
+										},
+										{
+											"key": "moduleId",
+											"value": "5eb6c444604d9b3b7034492b",
+											"type": "text"
+										},
+										{
+											"key": "moduleType",
+											"value": "APPLICATION",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:3000/application/comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"applicationId\": \"5eb6c444604d9b3b7034492b\",\n\t\"comment\": \"Awesome i think we are ready to submit it\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/application/comment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"comment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change application stage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"applicationId\": \"5eb6c444604d9b3b7034492b\",\n\t\"stage\": \"SUBMIT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/application/stage",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"stage"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQHNpYmFzaS5sdGQiLCJpYXQiOjE1ODkyMjQ1MTQsImV4cCI6MTU4OTMxMDkxNH0.yv4jbdCcbgGNFV4PJVM7B0tH9Z2a27SOopgsNZlmT8w",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d1228ffb-cae0-4916-ad48-6a265523a1b2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0bdc976c-3853-45c8-8a4a-04730e25ce59",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test1@sibasi.ltd\",\n\t\"organizationName\": \"Sibasi Ltd\",\n\t\"password\": \"password\",\n\t\"name\": \"Test User\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test1@sibasi.ltd\",\n\t\"organizationName\": \"Sibasi Ltd\",\n\t\"password\": \"password\",\n\t\"name\": \"Test User\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "328"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"148-8nK7Tygk7pbsJ7UIOlY4zH2G6Qg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 May 2020 19:14:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"result\": {\n        \"_id\": \"5eb9a404d5c40b1ea860d3d6\",\n        \"email\": \"test1@sibasi.ltd\",\n        \"organizationName\": \"Sibasi Ltd\",\n        \"password\": \"$2b$12$FNGM80.wXUZnzOPmZLvDc.U0hdlq4Gjx8qzCrIAgOTJJTSHEsO/Vu\",\n        \"name\": \"Test User\",\n        \"dateCreated\": \"2020-05-11T19:14:12.970Z\",\n        \"dateUpdated\": \"2020-05-11T19:14:12.975Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"test1@sibasi.ltd\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ee5d1bbe-993d-47f7-a9af-f1e674c79c25",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "465073dc-1024-4860-9d1f-efe1803ea7af",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

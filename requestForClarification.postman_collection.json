@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "7de13fab-d42c-4a2d-9699-0fb18247489f",
+		"name": "RequestForClarification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+				{
+					"name": "Request for Clarification",
+					"item": [
+						{
+							"name": "Create a request for clarification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"A request for clarification\", \n\t\"description\": \"this is my test request for clarification sample object\", \"moduleType\": \"REQUESTFORCLARIFICATION\", \"moduleItemId\": \"asdkan18291\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/requestClarification",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestClarification"
+									]
+								}
+							},
+							"response": {
+								"message": "Request for clarification added",
+								"result": {
+									"_id": "5ef81091397aec38f03ed4b3",
+									"title": "I have a question",
+									"description": "This is my question’s description",
+									"moduleType": "REQUESTFORAPPLICATION",
+									"moduleItemId": "asdkan18291",
+									"requestedBy": "5ef5d3dfec470518b43455ec",
+									"dateCreated": "2020-06-28T03:37:53.147Z",
+									"dateUpdated": "2020-06-28T03:37:53.153Z",
+									"__v": 0
+								}
+							}
+						},
+						{
+							"name": "Get Clarifications by User Id",
+							"request":{
+								"method": "GET",
+								"header": "",
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3000/requestClarification/getByUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestClarification",
+										"getByUser"
+									]
+								}	
+							},
+							"response":{
+								"message": "Get Clarifications by user Id",
+								"result": {
+									"status": 200,
+									"body": {
+										"message": "Clarification Fetched",
+										"result": [
+											{
+												"_id": "5ef7b6e07580780a80175cfc",
+												"title": "I have a question",
+												"description": "This is my question’s description",
+												"requestedBy": "5ef5d3dfec470518b43455ec",
+												"dateCreated": "2020-06-27T21:15:12.921Z",
+												"dateUpdated": "2020-06-27T21:15:12.930Z",
+												"__v": 0
+											},
+											{
+												"_id": "5ef7b72148d75d0fd432ea4d",
+												"title": "I have a question",
+												"description": "This is my question’s description",
+												"requestedBy": "5ef5d3dfec470518b43455ec",
+												"dateCreated": "2020-06-27T21:16:17.346Z",
+												"dateUpdated": "2020-06-27T21:16:17.353Z",
+												"__v": 0
+											},
+											{
+												"_id": "5ef7b87ff52b5212f4d8f374",
+												"title": "I have a question",
+												"description": "This is my question’s description",
+												"requestedBy": "5ef5d3dfec470518b43455ec",
+												"dateCreated": "2020-06-27T21:22:07.423Z",
+												"dateUpdated": "2020-06-27T21:22:07.439Z",
+												"__v": 0
+											}
+										]
+									}
+								}
+							}
+						},
+						{
+							"name": "Get Clarifications by moduleType & moduleItemId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n\t\"moduleType\": \"REQUESTFORAPPLICATION\", \"moduleItemId\": \"asdkan18291\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/requestClarification/getByTypeandId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestClarification",
+										"getByTypeandId"
+									]
+								}
+							},
+							"response": {
+								"message": "Clarifications",
+								"result": {
+									"status": 200,
+									"body": {
+										"message": "Clarification fetched",
+										"result": [
+											{
+												"_id": "5ef81091397aec38f03ed4b3",
+												"title": "I have a question",
+												"description": "This is my question’s description",
+												"moduleType": "REQUESTFORAPPLICATION",
+												"moduleItemId": "asdkan18291",
+												"requestedBy": "5ef5d3dfec470518b43455ec",
+												"dateCreated": "2020-06-28T03:37:53.147Z",
+												"dateUpdated": "2020-06-28T03:37:53.153Z",
+												"__v": 0
+											}
+										]
+									}
+								}
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+                }
+            ]
+}

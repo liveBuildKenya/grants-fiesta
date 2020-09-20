@@ -1,0 +1,2809 @@
+{
+	"info": {
+		"_postman_id": "d46d672e-90d4-4203-addf-62d30afbb129",
+		"name": "GrantsManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticated",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User profile with id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/profile/5ef3543e5e97e64b30f1cb01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"profile",
+										"5ef3543e5e97e64b30f1cb01"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change user password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"current_password\": \"other password\",\r\n    \"new_password\": \"Some password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/password/change",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"password",
+										"change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update user profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"phoneNumber\": \"+254 790 80 19 90\",\r\n    \"email\": \"gms_admin@sibasi.com\",\r\n    \"postalAddress\": \"6024 - 00200, Nairobi\",\r\n    \"country\": \"Kenya\",\r\n    \"organization\": \"Sibasi Ltd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invite user",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"emails\": [\"ezra@workspace.co.ke\"],\r\n    \"message\": \"join some organization to\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/invite",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"invite"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload profile picture",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/EzraMungai/Pictures/avatar.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/user/profile/picture/upload",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"profile",
+										"picture",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get profile picture",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/file/5ef751488d95db39cc44e3d8",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"file",
+										"5ef751488d95db39cc44e3d8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resend email verification",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/resend/verification",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"resend",
+										"verification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Veify Email",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/verify/5f03548ee182432b407f7efb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"verify",
+										"5f03548ee182432b407f7efb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://test.gms.api.eoai-africa.org/user/getAllUsers",
+									"protocol": "http",
+									"host": [
+										"test",
+										"gms",
+										"api",
+										"eoai-africa",
+										"org"
+									],
+									"path": [
+										"user",
+										"getAllUsers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5c0989b7-6bed-4636-878b-d363dc4a5b04",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "12a75954-e890-4b3d-ba76-68eeca101a7e",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Fund",
+					"item": [
+						{
+							"name": "Apply Fund",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Fund my project\",\n\t\"type\": \"INNOVATIONFUND\",\n\t\"stage\": \"DRAFT\",\n\t\"organizations\": \"Sibasi Ltd, Workspace Ltd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/fund/apply",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"fund",
+										"apply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "File upload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/EzraMungai/Documents/Personal/Books/Best Books For Mobile UX Designers By @UXlinks.pdf"
+										},
+										{
+											"key": "moduleId",
+											"value": "5eb6c444604d9b3b7034492b",
+											"type": "text"
+										},
+										{
+											"key": "moduleType",
+											"value": "APPLICATION",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comment on application",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"applicationId\": \"5eb6c444604d9b3b7034492b\",\n\t\"comment\": \"Awesome i think we are ready to submit it\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/application/comment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"comment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change application stage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"applicationId\": \"5eb6c444604d9b3b7034492b\",\n\t\"stage\": \"PROJECT\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/application/stage",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"stage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create performance indicator",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"applicationId\": \"5eb6c444604d9b3b7034492b\",\n    \"name\": \"Timeline\",\n    \"target\": { \n    \t\"value\": \"Start\", \n    \t\"date\": \"5/13/2020\", \n    \t\"budget\": 1200000 \n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/application/performance/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"performance",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comment on kpi",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"applicationId\": \"5eb6c444604d9b3b7034492b\",\n    \"performanceIndicatorId\": \"5eb9530eadb8ee19603dd47f\",\n    \"comment\": \"This is another kpi test comment\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/application/kpi/comment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"kpi",
+										"comment"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "RFA Template",
+					"item": [
+						{
+							"name": "Create RFA Template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"templateType\": \"Fixed Fund RFA Template Test\",\r\n    \"filesToUpload\": [\r\n        \"Technical Proposal\",\r\n        \"Financial Proposal\"\r\n    ],\r\n    \"forms\": [\r\n        {\r\n            \"title\": \"CONFIDENTIALITY, NON-DISCLOSURE and IMPARTIALITY CERTIFICATION\",\r\n            \"displayOrder\": 1,\r\n            \"requestForApplicationFormFields\": {\r\n                \"pros\": \"<p>Realizing that non-disclosure of confidential information is an essential condition for my role in the evaluation of applications for EOA-I Grants and acknowledging the confidentiality and non-disclosure requirements, I hereby declare and certify that</p><ul><li>I shall not use any confidential information about project’s RFA for personal purposes, neither shall i pass this information to other persons</li><li>I shall keep confidential any information related to the RFA and its entire process, as well as any other information that may come to my knowledge while undertaking my role</li><li>I undertake not to disclose any information during or after this assignment unless I have BvAT’s permission or am lawfully bound to do so</li><li>I shall take all necessary precautions against disclosure of confidential information when executing this role</li><li>Furthermore, I will exercise justice and objectivity while evaluating all applications from the offerors without any bias or prejudice</li></ul>\",\r\n                \"fields\": [\r\n                    {\r\n                        \"key\": \"awesome\",\r\n                        \"type\": \"checkbox\",\r\n                        \"templateOptions\": { \"label\": \"Agree to the Above terms\" }\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"title\": \"DECLARATION OF NON-CANVASSING AND NON-COLLUSIVE BIDDING\",\r\n            \"displayOrder\": 2,\r\n            \"requestForApplicationFormFields\": {\r\n                \"pros\": \"<p>I, the undersigned, hereby certify that this is a bona fide bid and I have not nor has any other member of our team</p><ol><li>Entered into any agreement with any other person with the aim of preventing other bids from being made or as to the fixing or adjusting of the amount of any bid or the conditions on which any bid is made whether in respect of EOA-I’s call for bids</li><li>Informed any other person of the amount of the bid</li><li>Caused or induced any person to enter into such an agreement as is mentioned in Paragraph 1 above</li><li>Offered or agreed to pay or give any sum of money, inducement or valuable consideration directly or indirectly to any person for doing or having done or causing to be done in relation to any other bid related to this EOA-I’s call for applications</li><li>Canvassed any other persons in connection with this bid</li><li>Communicated directly with any EOA-I personnel involved in work directly concerning this call for applications. This includes any aspect of the call (without limitation) for the purpose of soliciting information or the transfer of related personnel into the employment of the bidder</li><li>We also undertake that we shall not procure the doing of any of the acts mentioned in paragraphs 1 to 6 above before the hour and date specified for the return bid (as detailed in the call for applications Terms of Reference)</li></ul><p>In this certificate, the word “person” includes any person, body or association, corporate or incorporate and “agreement” includes any arrangement whether formal or informal and whether legally binding or not.</p>\",\r\n                \"fields\": [\r\n                    {\r\n                        \"key\": \"awesome\",\r\n                        \"type\": \"checkbox\",\r\n                        \"templateOptions\": { \"label\": \"Agree to the Above terms\" }\r\n                    }\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"title\": \"CONFLICT OF INTEREST CERTIFICATION\",\r\n            \"displayOrder\": 0,\r\n            \"requestForApplicationFormFields\": {\r\n                \"pros\": \"<p>I, do hereby certify that to the best of my knowledge, neither I nor my immediate family members have any financial or fiduciary interest in the applicant submitting a grant application under this solicitation.  In addition, neither myself nor my immediate family members, including those related by marriage, are employed by the applicant, or proposed by the applicant to provide work under any resultant grant.</p><p>Furthermore, I will not evaluate any application submitted by an offeror for which I have provided services at any time within the last three years, nor will I provide any consulting services to any applicant performing work as a result of a grant awarded in connection with the aforementioned solicitation</p>\",\r\n                \"fields\": [\r\n                    {\r\n                        \"key\": \"awesome\",\r\n                        \"type\": \"checkbox\",\r\n                        \"templateOptions\": { \"label\": \"Agree to the Above terms\" }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"customProperties\": {\r\n        \"name\": \"Country\",\r\n        \"possibleValues\": [\"Kenya\", \"Rwanda\", \"Benin\"]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create RFA Stage Template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categorizationField\": \"Country\",\r\n    \"name\": \"Executing Agency\",\r\n    \"displayOrder\": 2,\r\n    \"targetDuration\": 30,\r\n    \"durationType\": \"DAYS\",\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create RFA evaluation criteria Template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"displayOrder\": 2,\r\n    \"name\": \"Financial Evaluation\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/criteria",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"criteria"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create RFA criteria question Template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"evaluationCriteriaId\": \"5f3d2549c49fca33c8c293f7\",\r\n    \"evaluationSubCriteriaId\": \"5f3d2a98d107ed58f4a199eb\",\r\n    \"questionText\":\"Another one\",\r\n    \"questionType\": \"TEXTFIELD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/subCriteria/question",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"subCriteria",
+										"question"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get RFA Templates",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/rfa/templates",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"templates"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create RFA Permission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \r\n    \"applicationTemplateId\": \"5ef069faaa448f0c3430caf4\",\r\n    \"applicationStageId\": \"5ef06a2eaa448f0c3430caf5\",\r\n    \"action\": \"PUBLISH\",\r\n    \"users\": [\"5ee9be159dd67d44e8fe1934\", \"5ef0980640fbc523f432d5a2\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/permission",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"permission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update RFA template",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"filesToUpload\": [\"Request For Application\", \"Technical Proposal Template\", \"Budget Proposal Template\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/5ef069faaa448f0c3430caf4",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"5ef069faaa448f0c3430caf4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update RFA stage template",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categorizationField\": \"\",\r\n    \"name\": \"Executing Agency\",\r\n    \"displayOrder\": 2,\r\n    \"targetDuration\": 30,\r\n    \"durationType\": \"DAYS\",\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/5f2ac59bb0c8063d1c76e195",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"5f2ac59bb0c8063d1c76e195"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create RFA template form",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"title\": \"Application Summary\",\r\n    \"displayOrder\": 1,\r\n    \"requestForApplicationFormFields\": {\r\n        \"pros\": \"<p>Application summary</p>\",\r\n        \"fields\": [\r\n            {\r\n                \"key\": \"projectTitle\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Project Title\",\r\n                  \"placeholder\": \"Title\",\r\n                  \"description\": \"The name of the project\",\r\n                  \"required\": true\r\n                }\r\n            },\r\n            {\r\n                \"key\": \"objectives\",\r\n                \"type\": \"repeat\",\r\n                \"templateOptions\": {\r\n                  \"addText\": \"Add another Objective\"\r\n                },\r\n                \"fieldArray\": {\r\n                  \"fieldGroup\": [\r\n                    {\r\n                      \"className\": \"col-sm-4\",\r\n                      \"type\": \"input\",\r\n                      \"key\": \"objectiveName\",\r\n                      \"templateOptions\": {\r\n                        \"label\": \"Objective\",\r\n                        \"required\": true\r\n                      }\r\n                    }\r\n                  ]\r\n                }      \r\n            },\r\n            {\r\n                \"key\": \"budget\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Budget\",\r\n                  \"placeholder\": \"Project budget\",\r\n                  \"description\": \"The budget of the project\",\r\n                  \"required\": true\r\n                }\r\n            },\r\n            {\r\n                \"key\": \"regionCoverage\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Region & Coverage\",\r\n                  \"placeholder\": \"Project Region & Coverage\",\r\n                  \"description\": \"The region and coverage of the project\",\r\n                  \"required\": true\r\n                }\r\n            },          \r\n            {\r\n                \"key\": \"leadPartner\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Lead Partner\",\r\n                  \"placeholder\": \"Lead Partner name\",\r\n                  \"description\": \"The name of the lead partner\",\r\n                  \"required\": true\r\n                }\r\n            },\r\n            {\r\n              \"key\": \"partner\",\r\n              \"type\": \"repeat\",\r\n              \"templateOptions\": {\r\n                \"addText\": \"Add another Partner\"\r\n              },\r\n              \"fieldArray\": {\r\n                \"fieldGroup\": [\r\n                  {\r\n                    \"className\": \"col-sm-4\",\r\n                    \"type\": \"input\",\r\n                    \"key\": \"partnerName\",\r\n                    \"templateOptions\": {\r\n                      \"label\": \"Name of Investment:\",\r\n                      \"required\": true\r\n                    }\r\n                  },\r\n                  {\r\n                    \"className\": \"col-sm-4\",\r\n                    \"type\": \"input\",\r\n                    \"key\": \"email\",\r\n                    \"templateOptions\": {\r\n                      \"label\": \"Email:\",\r\n                      \"required\": true\r\n                    }\r\n                  },\r\n                  {\r\n                    \"className\": \"col-sm-4\",\r\n                    \"type\": \"input\",\r\n                    \"key\": \"phoneNumber\",\r\n                    \"templateOptions\": {\r\n                      \"label\": \"Phone Number:\",\r\n                      \"required\": true\r\n                    }\r\n                  }\r\n                ]\r\n              }\r\n            }\r\n          ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/form",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"form"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Rfa Template",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/rfa/template/5ef343a32adec143785d1ea0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"5ef343a32adec143785d1ea0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update RFA form template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWZhYjQ5NjA0OGRjM2QyZGI5ZjhiNTIiLCJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1OTUwNzc1OTEsImV4cCI6MTU5NTE2Mzk5MX0.ZSbLEvAoaMEe5YEaTc8ZStoD9G9TVvSydeyYwlz470A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f0871eacaca880bd2c511f8\",\r\n    \"title\": \"Application Summary\",\r\n    \"displayOrder\": 1,\r\n    \"requestForApplicationFormFields\": {\r\n        \"pros\": \"<p>Application summary</p>\",\r\n        \"fields\": [\r\n            {\r\n                \"key\": \"projectTitle\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Project Title\",\r\n                  \"placeholder\": \"Title\",\r\n                  \"description\": \"The name of the project\",\r\n                  \"required\": true\r\n                }\r\n            },\r\n            {\r\n                \"key\": \"objectives\",\r\n                \"type\": \"repeat\",\r\n                \"templateOptions\": {\r\n                  \"addText\": \"Add Objective\"\r\n                },\r\n                \"fieldArray\": {\r\n                  \"fieldGroup\": [\r\n                    {\r\n                      \"className\": \"col-sm-4\",\r\n                      \"type\": \"input\",\r\n                      \"key\": \"objectiveName\",\r\n                      \"templateOptions\": {\r\n                        \"label\": \"Objective\",\r\n                        \"required\": true\r\n                      }\r\n                    }\r\n                  ]\r\n                }      \r\n            },\r\n            {\r\n                \"key\": \"budget\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Budget\",\r\n                  \"placeholder\": \"Project budget\",\r\n                  \"description\": \"The budget of the project\",\r\n                  \"required\": true,\r\n                  \"type\": \"number\"\r\n                }\r\n            },\r\n            {\r\n                \"key\": \"regionCoverage\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Region & Coverage\",\r\n                  \"placeholder\": \"Project Region & Coverage\",\r\n                  \"description\": \"The region and coverage of the project\",\r\n                  \"required\": true\r\n                }\r\n            },          \r\n            {\r\n                \"key\": \"countryLeadPartnerName\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Country Lead Partner Name\",\r\n                  \"placeholder\": \"Country Lead Partner name\",\r\n                  \"description\": \"The name of the country lead partner\",\r\n                  \"required\": true\r\n                }\r\n            },\r\n            {\r\n                \"key\": \"countryLeadPartnerEmail\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Country Lead Partner Email\",\r\n                  \"placeholder\": \"Country Lead Partner email\",\r\n                  \"description\": \"The email of the country lead partner\",\r\n                  \"required\": true,\r\n                  \"type\": \"email\"\r\n                }\r\n            },\r\n            {\r\n                \"key\": \"countryLeadPartnerPhoneNumber\",\r\n                \"type\": \"input\",\r\n                \"templateOptions\": {\r\n                  \"label\": \"Country Lead Partner Phone Number\",\r\n                  \"placeholder\": \"Country Lead Partner phone number\",\r\n                  \"description\": \"The phone number of the country lead partner\",\r\n                  \"required\": true\r\n                }\r\n            },\r\n            {\r\n              \"key\": \"partner\",\r\n              \"type\": \"repeat\",\r\n              \"templateOptions\": {\r\n                \"addText\": \"Add Partner\"\r\n              },\r\n              \"fieldArray\": {\r\n                \"fieldGroup\": [\r\n                  {\r\n                    \"className\": \"col-sm-4\",\r\n                    \"type\": \"input\",\r\n                    \"key\": \"partnerName\",\r\n                    \"templateOptions\": {\r\n                      \"label\": \"Name of Partner:\",\r\n                      \"required\": true\r\n                    }\r\n                  },\r\n                  {\r\n                    \"className\": \"col-sm-4\",\r\n                    \"type\": \"input\",\r\n                    \"key\": \"partnerEmail\",\r\n                    \"templateOptions\": {\r\n                      \"label\": \"Partner Email:\",\r\n                      \"required\": true,\r\n                      \"type\": \"email\"\r\n                    }\r\n                  },\r\n                  {\r\n                    \"className\": \"col-sm-4\",\r\n                    \"type\": \"input\",\r\n                    \"key\": \"partnerPhoneNumber\",\r\n                    \"templateOptions\": {\r\n                      \"label\": \"Partner Phone Number:\",\r\n                      \"required\": true\r\n                    }\r\n                  }\r\n                ]\r\n              }\r\n            }\r\n          ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.gms.eoai-africa.org/rfa/template/form/5f0871eacaca880bd2c511fa",
+									"protocol": "https",
+									"host": [
+										"api",
+										"gms",
+										"eoai-africa",
+										"org"
+									],
+									"path": [
+										"rfa",
+										"template",
+										"form",
+										"5f0871eacaca880bd2c511fa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create custom properties",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5ef069faaa448f0c3430caf4\",\r\n    \"name\": \"Country\",\r\n    \"possibleValues\": [\"Kenya\", \"Rwanda\", \"Uganda\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/customProperties",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"customProperties"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Custom properties",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5ef069faaa448f0c3430caf4\",\r\n    \"name\": \"Country\",\r\n    \"possibleValues\": [\"Kenya\", \"Uganda\", \"Rwanda\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/customProperties/5ef888cc0a1c843968a49f6a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"customProperties",
+										"5ef888cc0a1c843968a49f6a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Rfa By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/rfa/template/5f04d4fdacce262be4cda0ec",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"5f04d4fdacce262be4cda0ec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Application Template Form",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/delete/template/form/5f04d4fdacce262be4cda0ef",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"delete",
+										"template",
+										"form",
+										"5f04d4fdacce262be4cda0ef"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Evaluation SubCriteria Template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"evaluationCriteriaId\": \"5f3d2549c49fca33c8c293f7\",\r\n    \"displayOrder\": 1,\r\n    \"isCalculated\": true,\r\n    \"allowComments\": true,\r\n    \"name\": \"Feasibility of Design & Approach SOMe\"\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/subCriteria",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"subCriteria"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update sub criteria question",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjA0YjkwMTliZjMwNTViOTRhZjczOTUiLCJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1OTcyNDExMzUsImV4cCI6MTU5NzMyNzUzNX0.kF6qvJvymkl8Fmxh68AwSrI4AcoX7xz06nRpGS9FxRk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"evaluationCriteriaId\": \"5f2ac92a2cccc32e081228a7\",\r\n    \"evaluationSubCriteriaId\": \"5f2ad16458e871105805dab3\",\r\n    \"possibleMarks\": 10,\r\n    \"questionType\": \"CALCULATED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/subCriteria/question/5f2ad3fecd521e0758a74d9c",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"subCriteria",
+										"question",
+										"5f2ad3fecd521e0758a74d9c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update application template evaluation criteria",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"displayOrder\": 0,\r\n    \"name\": \"Technical Evaluation\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/criteria/5f2ac92a2cccc32e081228a7",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"criteria",
+										"5f2ac92a2cccc32e081228a7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update application template stage evaluation sub criteria",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"evaluationCriteriaId\": \"5f2ac92a2cccc32e081228a7\",\r\n    \"displayOrder\": 0,\r\n    \"isCalculated\": true,\r\n    \"allowComments\": true,\r\n    \"name\": \"Feasibility of Design & Approach\"\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/subCriteria/5f2ad16458e871105805dab3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"subCriteria",
+										"5f2ad16458e871105805dab3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Sub criteria question",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"evaluationCriteriaId\": \"5f3d2549c49fca33c8c293f7\",\r\n    \"evaluationSubCriteriaId\": \"5f3d2a98d107ed58f4a199eb\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/subCriteria/question/5f3d320a0bba7a436cf81f8a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"subCriteria",
+										"question",
+										"5f3d320a0bba7a436cf81f8a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Evaluation SubCriteria",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"evaluationCriteriaId\": \"5f3d2549c49fca33c8c293f7\"\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/subCriteria/5f3d2a98d107ed58f4a199eb",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"subCriteria",
+										"5f3d2a98d107ed58f4a199eb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete evaluation criteria",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f04d4fdacce262be4cda0ec\",\r\n    \"applicationStageId\": \"5f2ac543b0c8063d1c76e186\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/rfa/template/stage/evaluation/criteria/5f3d2549c49fca33c8c293f7",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"stage",
+										"evaluation",
+										"criteria",
+										"5f3d2549c49fca33c8c293f7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create reporting template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/EzraMungai/Documents/Personal/Books/UX/uxpin_timeless_ux_design_trends_web_ux_design.pdf"
+										},
+										{
+											"key": "requestForApplicationTemplateId",
+											"value": "5f0871eacaca880bd2c511f8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/rfa/template/reportingTemplate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"reportingTemplate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete reporting template",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"reportingTemplateId\": \"5f560a200fceef7fa031d2a0\",\r\n    \"requestForApplicationTemplateId\": \"5f0871eacaca880bd2c511f8\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/rfa/template/delete/reportingTemplate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"rfa",
+										"template",
+										"delete",
+										"reportingTemplate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Request for Application",
+					"item": [
+						{
+							"name": "Create request for application",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f02d8f69246122b78d4584b\",\r\n    \"referenceNumber\": \"EOAI/SDC/BvAT/2020/-05\",\r\n    \"title\": \"MAINSTREAMING ECOLOGICAL ORGANIC AGRICULTURE (EOA) INTO AGRICULTURAL SYSTEMS IN AFRICA FOR THE PERIOD 2019-2023 (PHASE II)\",\r\n    \"shortDescription\": \"The Ecological Organic Agriculture (EOA) Initiative is an African Union-led continental undertaking currently implemented in nine countries (Benin, Ethiopia, Kenya, Mali, Nigeria, Senegal, Tanzania, Uganda and Rwanda). It is implemented under the guidance and oversight of the AU chaired Continental Steering Committee (CSC) to establish an African organic farming platform based on available best practices; and to develop sustainable organic farming systems and improve seed quality.\",\r\n    \"longDescription\": \"The Ecological Organic Agriculture (EOA) Initiative is an African Union-led continental undertaking currently implemented in nine countries (Benin, Ethiopia, Kenya, Mali, Nigeria, Senegal, Tanzania, Uganda and Rwanda). It is implemented under the guidance and oversight of the AU chaired Continental Steering Committee (CSC) to establish an African organic farming platform based on available best practices; and to develop sustainable organic farming systems and improve seed quality.\",\r\n    \"keyInformation\": \"The overall goal of this initiative is to mainstream EOA into national agricultural production systems by 2025 in order to improve agricultural productivity, food security, access to markets and sustainable development in Africa.\",\r\n    \"deadline\": \"06/13/2020\",\r\n    \"reviewDeadline\": \"08/13/2020\",\r\n    \"filesToUpload\": [\"Techinical\", \"Financial\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/requestForApplications",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Published RFA",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/requestForApplication/public",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"public"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publish request for application",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/requestForApplication/publish/5ef3a68ab265e744740e47b9",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"publish",
+										"5ef3a68ab265e744740e47b9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Request for application",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationTemplateId\": \"5f02d8f69246122b78d4584b\",\r\n    \"referenceNumber\": \"EOAI/SDC/BvAT/2020/-05\",\r\n    \"title\": \"MAINSTREAMING ECOLOGICAL ORGANIC AGRICULTURE (EOA) INTO AGRICULTURAL SYSTEMS IN AFRICA FOR THE PERIOD 2019-2023 (PHASE II)\",\r\n    \"shortDescription\": \"The Ecological Organic Agriculture (EOA) Initiative is an African Union-led continental undertaking currently implemented in nine countries (Benin, Ethiopia, Kenya, Mali, Nigeria, Senegal, Tanzania, Uganda and Rwanda). It is implemented under the guidance and oversight of the AU chaired Continental Steering Committee (CSC) to establish an African organic farming platform based on available best practices; and to develop sustainable organic farming systems and improve seed quality.\",\r\n    \"longDescription\": \"The Ecological Organic Agriculture (EOA) Initiative is an African Union-led continental undertaking currently implemented in nine countries (Benin, Ethiopia, Kenya, Mali, Nigeria, Senegal, Tanzania, Uganda and Rwanda). It is implemented under the guidance and oversight of the AU chaired Continental Steering Committee (CSC) to establish an African organic farming platform based on available best practices; and to develop sustainable organic farming systems and improve seed quality.\",\r\n    \"keyInformation\": \"The overall goal of this initiative is to mainstream EOA into national agricultural production systems by 2025 in order to improve agricultural productivity, food security, access to markets and sustainable development in Africa.\",\r\n    \"deadline\": \"06/13/2020\",\r\n    \"reviewDeadline\": \"08/13/2020\",\r\n    \"filesToUpload\": [\"Techinical\", \"Financial\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication/5f02fec2640ecf192090ace9",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"5f02fec2640ecf192090ace9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete request for application",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/requestForApplication/5ef3a68ab265e744740e47b9",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"5ef3a68ab265e744740e47b9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Express interest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplicationId\": \"5ef3a24912c0da0eb8cef3d4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication/ExpressInterest",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"ExpressInterest"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Revoke Interest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplicationId\": \"5ef3a24912c0da0eb8cef3d4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication/revokeInterest",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"revokeInterest"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Is User interested",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication/interested/5ef3a24912c0da0eb8cef3d4",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"interested",
+										"5ef3a24912c0da0eb8cef3d4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Uploaded Attachement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/EzraMungai/Documents/Personal/Books/Security/modsecurity-handbook-getting-started-2ed.pdf"
+										},
+										{
+											"key": "requestForApplicationId",
+											"value": "5ef3a24912c0da0eb8cef3d4",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Uploaded Attachement",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication/upload/attachement",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"upload",
+										"attachement"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete request for application attachment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplicationId\": \"5f04d783acce262be4cda0f1\",\r\n    \"attachmentFileId\": \"5f04da114f488539005c28a7\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/requestForApplication/attachement/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"attachement",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Create Comment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moduleItemId\": \"5ef069faaa448f0c3430caf4\",\r\n    \"moduleType\": \"RFA\",\r\n    \"commentText\": \"Another comment\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/comment",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"comment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moduleItemId\": \"5ef069faaa448f0c3430caf4\",\r\n    \"moduleType\": \"RFA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Application",
+					"item": [
+						{
+							"name": "Save Application",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplication\": \"5f141d59b644090928308bfd\",\r\n    \"customProperties\":  {\r\n        \"country\":\"Kenya\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/application/save",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload File",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/EzraMungai/Documents/Personal/Books/Security/openssl-cookbook.pdf"
+										},
+										{
+											"key": "applicationId",
+											"value": "5ef760eea4d4dd25a0164997",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Declaration of Interest",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/application/file/upload",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"file",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all applications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/applications",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check if user expressed interest",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/requestForApplication/interested/5ef3a24912c0da0eb8cef3d4",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"requestForApplication",
+										"interested",
+										"5ef3a24912c0da0eb8cef3d4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Submit Application",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationId\": \"5f141dbfb644090928308c04\",\r\n    \"customProperties\": {\"country\": \"Uganda\"}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/application/submit",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"submit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Withdraw Application",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/application/5ef760eea4d4dd25a0164997",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"5ef760eea4d4dd25a0164997"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Form Response",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplicationFormId\": \"5f04d4fdacce262be4cda0ee\",\r\n    \"requestForApplicationFormResponse\": {\r\n            \"awesome\": true\r\n        }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/application/form/response/5f04dcb54f488539005c28b0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"form",
+										"response",
+										"5f04dcb54f488539005c28b0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get application by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/application/5ef8a116d2c8c5281012aecc",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"5ef8a116d2c8c5281012aecc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Can Submit application",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/canSubmitApplication/5f04dcb54f488539005c28b0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"canSubmitApplication",
+										"5f04dcb54f488539005c28b0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete application uploaded file",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationId\": \"5f05afc603cfa420e0befcb4\",\r\n    \"fileId\": \"5f12fdf84e5f4e038cb03710\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/application/file/upload/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"application",
+										"file",
+										"upload",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Applications",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplicationId\": \"5f141d59b644090928308bfd\",\r\n    \"levelId\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/applications/search",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"applications",
+										"search"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Application Stage",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationIds\":[\"5f43a0d6c0c21a3056ab032a\", \"5f43a68fc0c21a3056ab035d\", \"5f43b547a6508e35d9e508c7\", \"5f43f67bf5ebef3c9d4d9db8\", \"5f43fa5cf5ebef3c9d4d9dec\", \"5f44caf65835d68417b4bb72\"],\r\n    \"nextStageId\": \"5f33def766225083e958d2ef\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/applications/moveNextStage",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"applications",
+										"moveNextStage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Award Grant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"applicationIds\": [\"5f1431dffcb40135b731f7da\",\"5f142f2efcb40135b731f7d2\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/applications/awardGrant",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"applications",
+										"awardGrant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get applications by request for application id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/applications/requestForApplication/5efc42c9d9b47a03fca56a34",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"applications",
+										"requestForApplication",
+										"5efc42c9d9b47a03fca56a34"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "File",
+					"item": [
+						{
+							"name": "Delete file",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/file/5f12fdf84e5f4e038cb03710",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"file",
+										"5f12fdf84e5f4e038cb03710"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get file details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/file/details/5ef7549c3896c93bf878907b",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"file",
+										"details",
+										"5ef7549c3896c93bf878907b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get file",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/file/5ef5eefe340ec95cc831a57e",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"file",
+										"5ef5eefe340ec95cc831a57e"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Event",
+					"item": [
+						{
+							"name": "Create Event",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"new event\",\r\n    \"moduleItemId\": \"5ef3a24912c0da0eb8cef3d4\",\r\n    \"moduleType\": \"RFA\",\r\n    \"description\": \"New event description\",\r\n    \"remindDate\": \"6/22/2020\",\r\n    \"startDate\": \"6/23/2020\",\r\n    \"endDate\": \"6/23/2020\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/event",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Event by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/event/5ef8797b24b1153044b6959d",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"event",
+										"5ef8797b24b1153044b6959d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Event",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"new event\",\r\n    \"moduleItemId\": \"5ef3a24912c0da0eb8cef3d4\",\r\n    \"moduleType\": \"Application\",\r\n    \"description\": \"New event description\",\r\n    \"remindDate\": \"6/22/2020\",\r\n    \"startDate\": \"6/23/2020\",\r\n    \"endDate\": \"6/23/2020\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/event/5ef8797b24b1153044b6959d",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"event",
+										"5ef8797b24b1153044b6959d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all events",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/events",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Events",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"moduleItemId\": \"5ef3a24912c0da0eb8cef3d4\",\r\n    \"moduleType\": \"Application\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/events",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"events"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Notifications",
+					"item": [
+						{
+							"name": "Get notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notifications",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "User Group",
+					"item": [
+						{
+							"name": "Create Group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"groupName\": \"National Committee\",\r\n    \"permissions\": [\"CANLISTREQUESTFORAPPLICATIONS\"],\r\n    \"users\": [\"5f057ac2247ac91b28897bad\"]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/userGroup/createGroup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userGroup",
+										"createGroup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All User Groups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/userGroup/getAllGroups",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userGroup",
+										"getAllGroups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create user group mapping",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\": \"5ee9be159dd67d44e8fe1934\",\r\n    \"userGroup\": \"5f0475e0d9fc564f54e72241\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/group/member",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"group",
+										"member"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove User from group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": \"5f057ac2247ac91b28897bad\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/userGroup/removeUserFromGroup/5f057b15247ac91b28897bae",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userGroup",
+										"removeUserFromGroup",
+										"5f057b15247ac91b28897bae"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create global administrator",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/user/createGlobalAdministrator/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"createGlobalAdministrator",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Menu",
+					"item": [
+						{
+							"name": "Add group from the menu item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"itemID\": \"5ef9b676abba2b3f54ba7d56\",\r\n    \"userGroupID\": \"5f02e7e260f3e638781301f1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/menu/menuItemUserGroup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"menu",
+										"menuItemUserGroup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Brand New Menu Item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n   {\r\n      \"title\": true,\r\n      \"name\": \"Applications\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"name\": \"Home\",\r\n      \"url\": \"/dashboard\",\r\n      \"icon\": \"icon-home\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"name\": \"Calls for Applications\",\r\n      \"url\": \"/requestForApplications/public\",\r\n      \"icon\": \"icon-list\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"name\": \"My Submissions\",\r\n      \"url\": \"/applications\",\r\n      \"icon\": \"icon-note\",\r\n      \"isAllowAllAuthenticatedUsers\": true\r\n   },\r\n   {\r\n      \"title\": true,\r\n      \"name\": \"My Account\",\r\n      \"isAllowAllAuthenticatedUsers\": true,\r\n      \"order\": 1\r\n   },\r\n   {\r\n      \"name\": \"My Profile\",\r\n      \"url\": \"/profile\",\r\n      \"icon\": \"icon-user\",\r\n      \"isAllowAllAuthenticatedUsers\": true,\r\n      \"order\": 1\r\n   },\r\n   {\r\n      \"title\": true,\r\n      \"name\": \"Administrator\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 10\r\n   },\r\n   {\r\n      \"name\": \"Manage Users\",\r\n      \"url\": \"/users/usersList\",\r\n      \"icon\": \"icon-people\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 12\r\n   },\r\n   {\r\n      \"name\": \"Menu Management\",\r\n      \"url\": \"/manageNavItems\",\r\n      \"icon\": \"icon-menu\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 12\r\n   },\r\n   {\r\n      \"name\": \"Manage RFAs\",\r\n      \"url\": \"/admin\",\r\n      \"icon\": \"icon-book-open\",\r\n      \"isAllowAllAuthenticatedUsers\": false,\r\n      \"order\": 11,\r\n      \"children\": [\r\n         {\r\n            \"name\": \"Call for Applications\",\r\n            \"url\": \"/rfa-list\",\r\n            \"icon\": \"icon-notebook\"\r\n         },\r\n         {\r\n            \"name\": \"Template List\",\r\n            \"url\": \"/applications/template\",\r\n            \"icon\": \"icon-puzzle\"\r\n         }\r\n      ]\r\n   }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/menu",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"menu"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Evaluation",
+					"item": [
+						{
+							"name": "Create Evaluation Group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"requestForApplicationId\": \"5f141d59b644090928308bfd\",\r\n    \"evaluators\": { \r\n        \"stageId\": \"5f2ac543b0c8063d1c76e186\",\r\n        \"customProperty\": {\"country\": \"Uganda\"},\r\n        \"userIds\": [\"5f04dc514f488539005c28ae\", \"5f057ac2247ac91b28897bad\", \"5f04dc514f488539005c28ae\"]\r\n    },\r\n    \"isUsingCustomProperty\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/evaluation/group",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Evaluation Groups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/evaluation/groups",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"groups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update evaluation group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userIds\": [\"5f04b9019bf3055b94af7395\", \"5f04dc514f488539005c28ae\"],\r\n    \"stageId\": \"5f2ac543b0c8063d1c76e186\",\r\n    \"country\": \"Uganda\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/evaluation/group/5f2c091cadf09f26fce8a26f",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"group",
+										"5f2c091cadf09f26fce8a26f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Evaluation Group",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/evaluation/group/5f2c091cadf09f26fce8a26f",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"group",
+										"5f2c091cadf09f26fce8a26f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users Evaluation Group",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/evaluation/user/evaluationGroup/5f141d59b644090928308bfd",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"user",
+										"evaluationGroup",
+										"5f141d59b644090928308bfd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit members",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"evaluationGroupEvaluatorsId\": \"5f3f6c2a34069c4750ec0b12\",\r\n    \"userIds\": [\"5f04dc514f488539005c28ae\", \"5f057ac2247ac91b28897bad\", \"5f04dc514f488539005c28ae\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/evaluation/group/members/5f33c9dc6daba42d4c18b4eb",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"group",
+										"members",
+										"5f33c9dc6daba42d4c18b4eb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete evaluation memebers",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"evaluatorsId\": \"5f33c9dc6daba42d4c18b4ec\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/evaluation/group/members/5f33c9dc6daba42d4c18b4eb",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"evaluation",
+										"group",
+										"members",
+										"5f33c9dc6daba42d4c18b4eb"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Reports",
+					"item": [
+						{
+							"name": "Attach report",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/EzraMungai/Downloads/logo.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/report-management/report/attachment",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"report-management",
+										"report",
+										"attachment"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWZhYjQ5NjA0OGRjM2QyZGI5ZjhiNTIiLCJuYW1lIjoiQWRtaW4iLCJpYXQiOjE1OTk0NzM0MzYsImV4cCI6MTU5OTU1OTgzNn0.9FAY1rMrwaIm32RwLeMgDZfgG3pZjTPJ4ggJoebUfjE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7c268bd7-b0d0-4bff-8176-82c96ea1f858",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b72a060-4a5d-41d0-a87d-8c12e4b9bcd2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ezra.mungai@sibasi.ltd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/password/forgot",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"mungaiezrakaruoya@live.com\",\n\t\"password\": \"Password\",\n\t\"name\": \"Mungai Ezra\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"gms_admin@sibasi.com\",\n\t\"password\": \"zd%0AX13l%Mx\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Administrator\",\n\t\"permissions\": [\n        {\n            \"systemName\": \"CANREVIEWATNATIONALLEVEL\",\n            \"description\": \"User can review a project at national level\"\n        },\n        {\n            \"systemName\": \"CANREVIEWATEXECUTINGAGENCYLEVEL\",\n            \"description\": \"User can review a project at executing agency level\"\n        }\n    ]\n\t\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/roles/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": 973386,\r\n    \"newPassword\": \"Password\",\r\n    \"email\": \"ezra.mungai@sibasi.ltd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/password/reset",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Permissions",
+			"item": [
+				{
+					"name": "Get System Permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/permissions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Update Global Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/createGlobalAdministrator",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"createGlobalAdministrator"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get system permissions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/roles/permissions",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"roles",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
